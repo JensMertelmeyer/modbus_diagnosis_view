@@ -28,7 +28,9 @@ function addLeft() {
 	const content = 
 		'<div class="box sb_left box_left">'
 		+'Links'
-		+'<div class="timestamp">(TIMESTAMP)</div>'
+		+'<div class="timestamp">'
+		+ new Date().toLocaleString()
+		+ '</div>'
 		+'</div>';
 	
 	frame.contentWindow.addTestBubble(true, content, ++id);
@@ -40,7 +42,9 @@ function addRight() {
 	const content = 
 		'<div class="box sb_right box_right">'
 		+'Rechts'
-		+'<div class="timestamp">(TIMESTAMP)</div>'
+		+'<div class="timestamp">'
+		+ new Date().toLocaleString()
+		+ '</div>'
 		+'</div>';
 	
 	frame.contentWindow.addTestBubble(false, content, ++id);
