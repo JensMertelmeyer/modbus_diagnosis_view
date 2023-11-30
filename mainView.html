@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script>
+		function scrollToBottom() {window.scrollTo(0,document.body.scrollHeight);};
+
+		function addTestBubble(isLeft, content, id) {
+			var outerDiv = document.createElement('div');
+			outerDiv.innerHTML = content;
+			document.getElementsByTagName('body')[0].appendChild(outerDiv);
+			if(isLeft)
+				outerDiv.style.cssText = 'text-align: left';
+			else
+				outerDiv.style.cssText = 'text-align: right';
+			outerDiv.id = id;
+		}
+
+		function addBreak(id) {
+			var newP = document.createElement('p');
+			newP.className = "break";			
+			document.getElementsByTagName('body')[0].appendChild(newP);
+			newP.id = id;
+		}
+
+		function setFadeInAnimationLength(seconds) {
+			var bubbles = document.getElementsByTagName('html')[0];
+			html.setAttribute("style", "--main-background-color: green");
+		}
+
+		document.addEventListener(
+			'contextmenu', 
+			function(event) {event.preventDefault();}, 
+			true
+		);
+
+		Element.prototype.remove = function () {
+			this.parentElement.removeChild(this);
+		}
+		NodeList.prototype.remove = HTMLCollection.prototype.remove = function () {
+			for (var i = this.length - 1; i >= 0; i--) {
+				if (this[i] && this[i].parentElement) {
+					this[i].parentElement.removeChild(this[i]);
+				}
+			}
+		}
+		function deleteElement(id) {
+			document.getElementById(id).remove();
+		}
+	</script>
+	<style>
+		@keyframes example {
+			from {opacity: 0.0;}
+			to {opacity: initial}			
+		}
+
+		.fadeInAnimation {
+			animation-name: example;
+			animation-duration: 1s;
+		}
+
+		.box {
+			display: inline-block;
+			margin: 5px auto;
+			padding: 12px;
+			text-align: center;
+			font-weight: normal;
+			color: #FFFFFF;
+			font-family: 'Consolas', 'Courier New', Courier, monospace;
+			position: relative;
+			border-radius: 12px;
+		}
+
+		.controlCharacter {
+			color: LightGrey;
+			font-weight: bold
+		}
+
+		.box_left {
+			background: darkolivegreen;			
+		}
+
+		.box_right {
+			background: darkslateblue;
+		}
+
+		.box_alert {
+			background: Red;
+			color: White;
+		}
+		.box_alert .controlCharacter {color:LightGrey}
+		
+
+		.sb_right:before {
+			content: "";
+			width: 0px;
+			height: 0px;
+			position: absolute;
+			border-left: 10px solid darkslateblue;
+			border-right: 10px solid transparent;
+			border-top: 10px solid darkslateblue;
+			border-bottom: 10px solid transparent;
+			right: -15px;
+			top: 6px;
+		}
+
+		.pattern {
+			/*background:url(
+				data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAqSURBVChTY8AC/kNpvACmCK9idEmsinGZgCKO1xogICSPAkhSTAxgYAAA7L4J94Dvcc8AAAAASUVORK5CYII=
+			); */
+
+			background: repeating-linear-gradient(
+				45deg,
+				Red,
+				DarkRed 10px,
+				FireBrick 10px,
+				Red 20px
+			);
+			opacity: 1.0
+		}
+
+		.sb_right {
+			text-align: right
+		}
+
+		.sb_left:before {
+			content: "";
+			width: 0px;
+			height: 0px;
+			position: absolute;
+			border-left: 10px solid transparent;
+			border-right: 10px solid darkolivegreen;
+			border-top: 10px solid darkolivegreen;
+			border-bottom: 10px solid transparent;
+			left: -15px;
+			top: 6px;
+		}
+
+		.sb_left {
+			text-align: left
+		}
+
+		.timestamp {
+			font-style: normal;
+			font-weight: lighter;
+			font-size: 75%;
+		}
+
+		.errorMarker {
+			font-weight: bold;
+			font-size: 120%;
+			font-family: Arial
+		}
+
+		.break{
+			width: 100%;
+			height: 50px;
+			margin-top: -10px;
+			border-bottom: 1px solid Black;
+			box-shadow: 0 20px 20px -20px #333;
+			margin: -50px auto 10px;
+		}
+	</style>
+</head>
+
+<body style="padding: 25px;">
+
+</body>
+
+</html>
