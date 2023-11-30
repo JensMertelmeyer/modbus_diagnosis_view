@@ -19,6 +19,11 @@ function initButtons(frame) {
 		"click",
 		() => addBreak()
 	);
+	
+	doc.getElementById("btn_timeout").addEventListener(
+		"click",
+		() => addTimeout()
+	);
 }
 
 var id = 0;
@@ -48,6 +53,20 @@ function addRight() {
 		+'</div>';
 	
 	frame.contentWindow.addTestBubble(false, content, ++id);
+	frame.contentWindow.scrollToBottom();
+}
+
+function addTimeout() {
+	const frame = document.getElementById("lower");
+	const content = 
+		'<div class="box box_left box_alert pattern">'
+		+'Timeout links!'
+		+'<div class="timestamp">'
+		+ new Date().toLocaleString()
+		+ '</div>'
+		+'</div>';
+	
+	frame.contentWindow.addTestBubble(true, content, ++id);
 	frame.contentWindow.scrollToBottom();
 }
 
