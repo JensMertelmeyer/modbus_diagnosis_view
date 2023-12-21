@@ -100,7 +100,7 @@ function addExamples() {
 		+ new Date().toLocaleString()
 		+ '</div>'
 		+'</div>';	
-	frame.contentWindow.addTestBubble(true, content, ++id);
+	frame.contentWindow.addTestBubble(false, content, ++id);
 	
 	content = 
 		'<div class="box sb_left box_left">'
@@ -111,7 +111,7 @@ function addExamples() {
 		+ new Date().toLocaleString()
 		+ '</div>'
 		+'</div>';
-	frame.contentWindow.addTestBubble(false, content, ++id);
+	frame.contentWindow.addTestBubble(true, content, ++id);
 	
 	frame.contentWindow.addBreak();
 	
@@ -126,7 +126,7 @@ function addExamples() {
 		+ new Date().toLocaleString()
 		+ '</div>'
 		+'</div>';
-	frame.contentWindow.addTestBubble(true, content, ++id);
+	frame.contentWindow.addTestBubble(false, content, ++id);
 		
 	content =
 		'<div class="box sb_left box_left">'
